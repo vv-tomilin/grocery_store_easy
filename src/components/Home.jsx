@@ -1,26 +1,14 @@
 import React from 'react';
 
+import Categories from './Categories';
+import Header from './Header';
+
 
 function Home() {
 	return (
 		<div>
-			<div className='header'>
-				<div className='logo-block'>МАГАЗ-ПРОДУКТ</div>
-				<div className='cart-block'>
-					<button className='btn btn-cart'>Корзина</button>
-					<div>
-						<p>Количество<br /> товаров: 5</p>
-						<p><br />На сумму: 1500 ₽</p>
-					</div>
-				</div>
-			</div>
-			<div className='categories-group'>
-				<button className='btn cart-btn active-categories'>Все</button>
-				<button className='btn cart-btn'>Овощи</button>
-				<button className='btn cart-btn'>Фрукты</button>
-				<button className='btn cart-btn'>Мясо</button>
-				<button className='btn cart-btn'>Молочка</button>
-			</div>
+			<Header />
+			<Categories />
 			<div className='product-list'>
 				<div className='product-block'>
 					<div className='product-img-container'>
