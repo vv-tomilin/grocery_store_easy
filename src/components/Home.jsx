@@ -6,7 +6,13 @@ function Home() {
 		<div>
 			<div className='header'>
 				<div className='logo-block'>МАГАЗ-ПРОДУКТ</div>
-				<button className='btn'>Корзина</button>
+				<div className='cart-block'>
+					<button className='btn btn-cart'>Корзина</button>
+					<div>
+						<p>Количество<br /> товаров: 5</p>
+						<p><br />На сумму: 1500 ₽</p>
+					</div>
+				</div>
 			</div>
 			<div className='categories-group'>
 				<button className='btn cart-btn active-categories'>Все</button>
