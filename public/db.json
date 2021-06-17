@@ -43,21 +43,21 @@
 			"price": 125
 		},
 		{
-			"id": 2,
+			"id": 6,
 			"imageURL": "https://w7.pngwing.com/pngs/730/279/png-transparent-meatball-beef-ball-pork-ball-stuffing-hot-pot-meatballs-meatballs-soup-food-recipe-thumbnail.png",
 			"name": "Котлеты",
 			"category": 2,
 			"price": 125
 		},
 		{
-			"id": 2,
+			"id": 7,
 			"imageURL": "https://w7.pngwing.com/pngs/497/643/png-transparent-on-a-milk-carton-on-a-milk-carton-food-milk-food-breakfast-logo-thumbnail.png",
 			"name": "Молоко",
 			"category": 3,
 			"price": 59
 		},
 		{
-			"id": 2,
+			"id": 8,
 			"imageURL": "https://w7.pngwing.com/pngs/461/488/png-transparent-chocolate-milk-yogurt-berry-cream-fresh-strawberry-yogurt-packaging-natural-foods-food-strawberries-thumbnail.png",
 			"name": "Йогурт",
 			"category": 3,
