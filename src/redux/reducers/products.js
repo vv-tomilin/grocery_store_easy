@@ -1,5 +1,6 @@
 const initState = {
-	items: []
+	items: [],
+	isLoaded: false
 };
 
 function products(state = initState, action) {
@@ -7,7 +8,13 @@ function products(state = initState, action) {
 		case 'SET_PRODUCTS':
 			return {
 				...state,
-				items: action.payload
+				items: action.payload,
+				isLoaded: true
+			};
+		case 'SET_LOADED':
+			return {
+				...state,
+				isLoaded: action.payload
 			};
 		default:
 			return state;
