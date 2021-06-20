@@ -1,10 +1,20 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+
+import { fetchProducts } from '../redux/actions/products';
 
 import Categories from './Categories';
 import Header from './Header';
 
 
 function Home() {
+
+	const dispatch = useDispatch();
+
+	React.useEffect(() => {
+		fetchProducts(dispatch);
+	}, [])
+
 	return (
 		<div>
 			<Header />
