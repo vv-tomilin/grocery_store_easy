@@ -1,16 +1,30 @@
 import React from 'react';
 
-function Categories() {
+function Categories({ activeCategory, items, onClickCategory }) {
 	return (
-		<div>
-			<div className='categories-group'>
-				<button className='btn cart-btn active-categories'>Все</button>
-				<button className='btn cart-btn'>Овощи</button>
-				<button className='btn cart-btn'>Фрукты</button>
-				<button className='btn cart-btn'>Мясо</button>
-				<button className='btn cart-btn'>Молочка</button>
-			</div>
-		</div>
+		<ul className='categories-group'>
+			<li>
+				<button
+					className={activeCategory === null
+						? 'btn cart-btn active-categories'
+						: 'btn cart-btn'}
+					onClick={() => onClickCategory(null)}
+				>Все</button>
+			</li>
+			{
+				items && items.map((name, index) => (
+					<li>
+						<button
+							key={`${name}_${index}`}
+							className={activeCategory === index
+								? 'btn cart-btn active-categories'
+								: 'btn cart-btn'}
+							onClick={() => onClickCategory(index)}
+						>{name}</button>
+					</li>
+				))
+			}
+		</ul>
 	);
 }
 
