@@ -13,9 +13,8 @@ function Categories({ activeCategory, items, onClickCategory }) {
 			</li>
 			{
 				items && items.map((name, index) => (
-					<li>
+					<li key={`${name}_${index}`}>
 						<button
-							key={`${name}_${index}`}
 							className={activeCategory === index
 								? 'btn cart-btn active-categories'
 								: 'btn cart-btn'}
