@@ -22,10 +22,10 @@ function Home() {
 	const { category } = useSelector(({ filters }) => filters);
 
 	React.useEffect(() => {
-		dispatch(fetchProducts());
-	}, []);
+		dispatch(fetchProducts(category));
+	}, [category]);
 
-	const onSelectCategory =(index)=> {
+	const onSelectCategory = (index) => {
 		dispatch(setCategory(index));
 	};
 
@@ -38,7 +38,7 @@ function Home() {
 				onClickCategory={onSelectCategory} />
 			<div className='product-list'>
 				{
-					items.map(obj =>
+					items.map((obj) =>
 						<ProductBlock
 							key={obj.id}
 							name={obj.name}
