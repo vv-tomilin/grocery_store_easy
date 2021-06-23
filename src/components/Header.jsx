@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Header() {
+function Header({ totalCount, totalPrice }) {
+
 	return (
 		<div>
 			<div className='header'>
@@ -8,8 +9,8 @@ function Header() {
 				<div className='cart-block'>
 					<button className='btn btn-cart'>Корзина</button>
 					<div>
-						<p>Количество<br /> товаров: 5</p>
-						<p><br />На сумму: 1500 ₽</p>
+						<p>Количество<br /> товаров: {totalCount}</p>
+						<p><br />На сумму: {totalPrice} ₽</p>
 					</div>
 				</div>
 			</div>

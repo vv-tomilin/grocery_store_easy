@@ -1,6 +1,17 @@
 import React from 'react';
 
-function ProductBlock({ name, imageURL, price }) {
+function ProductBlock({ id, name, imageURL, price, onClickAddProduct }) {
+
+	const onAddProduct = () => {
+
+		const obj = {
+			id,
+			name,
+			price
+		};
+
+		onClickAddProduct(obj);
+	};
 
 	return (
 		<div>
@@ -10,7 +21,9 @@ function ProductBlock({ name, imageURL, price }) {
 				</div>
 				<p>{name}</p>
 				<div className='price'>{price} ₽</div>
-				<button className='btn cart-btn'>В корзину</button>
+				<button
+					className='btn cart-btn'
+					onClick={onAddProduct} >В корзину</button>
 			</div>
 		</div>
 	)

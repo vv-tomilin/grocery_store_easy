@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchProducts } from '../redux/actions/products';
 import { setCategory } from '../redux/actions/filters';
+import { addProductToCart } from '../redux/actions/cart';
 
 import { Categories, Header, ProductBlock } from '../components';
 
@@ -20,6 +21,7 @@ function Home() {
 
 	const items = useSelector(({ products }) => products.items);
 	const { category } = useSelector(({ filters }) => filters);
+	const { totalCount, totalPrice } = useSelector(({ cart }) => cart);
 
 	React.useEffect(() => {
 		dispatch(fetchProducts(category));
@@ -29,9 +31,15 @@ function Home() {
 		dispatch(setCategory(index));
 	};
 
+	const handleAddProductToCart = (obj) => {
+		dispatch(addProductToCart(obj));
+	};
+
 	return (
 		<div>
-			<Header />
+			<Header
+				totalCount={totalCount}
+				totalPrice={totalPrice} />
 			<Categories
 				activeCategory={category}
 				items={categoryNames}
@@ -41,9 +49,11 @@ function Home() {
 					items.map((obj) =>
 						<ProductBlock
 							key={obj.id}
+							id={obj.id}
 							name={obj.name}
 							imageURL={obj.imageURL}
-							price={obj.price} />)
+							price={obj.price}
+							onClickAddProduct={handleAddProductToCart} />)
 				}
 			</div>
 		</div>
