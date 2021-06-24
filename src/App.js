@@ -1,14 +1,20 @@
 import React from 'react';
+import { Route } from 'react-router';
 
 import './styles.css';
 
-import Home from './pages/Home';
+import { Header } from './components';
+import { Home, Cart } from './pages';
 
 
 function App() {
   return (
     <div>
-      <Home />
+      <Header />
+      <div>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/cart' component={Cart} />
+      </div>
     </div>
   );
 }

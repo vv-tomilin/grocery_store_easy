@@ -5,7 +5,7 @@ import { fetchProducts } from '../redux/actions/products';
 import { setCategory } from '../redux/actions/filters';
 import { addProductToCart } from '../redux/actions/cart';
 
-import { Categories, Header, ProductBlock } from '../components';
+import { Categories, ProductBlock } from '../components';
 
 const categoryNames = [
 	'Овощи',
@@ -21,7 +21,6 @@ function Home() {
 
 	const items = useSelector(({ products }) => products.items);
 	const { category } = useSelector(({ filters }) => filters);
-	const { totalCount, totalPrice } = useSelector(({ cart }) => cart);
 
 	React.useEffect(() => {
 		dispatch(fetchProducts(category));
@@ -37,9 +36,6 @@ function Home() {
 
 	return (
 		<div>
-			<Header
-				totalCount={totalCount}
-				totalPrice={totalPrice} />
 			<Categories
 				activeCategory={category}
 				items={categoryNames}
