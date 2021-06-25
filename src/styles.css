@@ -124,3 +124,24 @@
 
 	background-color: rgb(111, 223, 60);
 }
+
+.cart-list {
+	display: flex;
+	flex-direction: column;
+
+	align-items: center;
+
+	list-style: none	;
+}
+
+.cart-item {
+	margin-top: 20px;
+	padding: 15px;
+	
+	width: 200px;
+
+	background-color: rgb(255, 252, 212);
+
+	border: 1px solid rgb(255, 230, 0);
+	border-radius: 6px;
+}

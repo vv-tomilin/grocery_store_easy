@@ -5,6 +5,7 @@ function ProductBlock({ id, name, imageURL, price, onClickAddProduct }) {
 	const onAddProduct = () => {
 
 		const obj = {
+			imageURL,
 			id,
 			name,
 			price
